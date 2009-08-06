@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-UK" dir="ltr">
+	<head>
+	<title>jQuery Colour Swatch</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" language="Javascript" src="colourpicker.js"></script>
+	<script type="text/javascript" language="Javascript">
+	$(document).ready(function() {
+		var colour = $('input#choose_your_colour');
+
+		colour.colourPicker({ colourInput : true, colours: ['magenta', 'blue', 'pink', 'yellow'] });
+		// colour.colourPicker({colours: ['magenta', 'blue', 'pink', 'yellow']});		
+		// colour.colourPicker();
+	});
+  </script>
+
+<style type="text/css" media="screen">
+	
+	div#colour-swatch, label, input {
+		float: left;
+		display: block;
+		clear: both;
+	}
+	
+	div#colour-swatch {
+		padding: 4px;
+		border: 1px solid #CCCCCC;
+		background-color: #333333;
+		display: none;
+	}
+
+	div#colour-swatch table {
+		border-collapse: collapse;
+	}
+	
+	div#colour-swatch table td { 
+		width: 12px; 
+		height: 14px; 
+		cursor: pointer; 
+		border: 1px solid black;
+		margin: 1px;
+		float: left;
+		display: block;
+	}
+	
+	div#colour-swatch table td:hover {
+		border: 1px solid #FFFF00;
+	}
+	
+	div#colour-swatch table tbody tr {
+		width: 70px;
+		height: 25px;
+		background-color: white;
+		float: left;
+		display: block;
+	}
+	
+	div#colour-swatch table tbody tr#colour-preview {
+		margin-left: 1px;
+		margin-top: 3px;
+		border: 1px solid black;
+	}
+</style>
+	</head>
+	<body>
+		<label for="choose_your_colour">Choose your colour</label>
+		<input type="text" name="choose_your_colour" value="" id="choose_your_colour">
+		
+		<div id="colour-swatch"></div>
+	</body>
+	</html>
