@@ -11,8 +11,8 @@
 	$(document).ready(function() {
 		var colour = $('input#choose_your_colour');
 
-		colour.colourPicker({ colourInput : true, colours: ['magenta', 'blue', 'pink', 'yellow'] });
-		// colour.colourPicker({colours: ['magenta', 'blue', 'pink', 'yellow']});		
+		// colour.colourPicker({ colourInput : true, colours: ['magenta', 'blue', 'pink', 'yellow'] });
+		colour.colourPicker({colours: ['magenta', 'blue'] });		
 		// colour.colourPicker();
 	});
   </script>
@@ -51,7 +51,7 @@
 	}
 	
 	div#colour-swatch table tbody tr {
-		width: 70px;
+/*		width: 70px;*/
 		height: 25px;
 		background-color: white;
 		float: left;

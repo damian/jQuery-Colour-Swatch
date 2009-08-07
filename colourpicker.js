@@ -3,8 +3,22 @@
         var defaults = {
             colours: ['red', 'blue', 'yellow', 'green', 'purple', 'orange', 'grey', 'magenta'],
 			colourInput : true,
-            columns: 4
+			columns: 4
         };
+		
+		if (options) {
+			if (options.colours) {
+				if (options.colours.length < defaults.columns) {
+					options.columns = options.colours.length;
+				}
+			}
+			
+			if (options.columns) {
+				if (options.columns % 2 != 0 && defaults.colours.length % 2 == 0) {
+					options.columns = options.columns - 1;
+				}
+			}
+		}
 
         var options = $.extend(defaults, options);
         return this.each(function() {
@@ -14,7 +28,7 @@
 			obj.bind('focus', function(){
 				if (!_append) {
 					$('div#colour-swatch').fadeIn('slow').append(createTable(defaults.colours, defaults.columns));
-					$('div#colour-swatch table tbody tr#colour-preview').css({ 'width' : $('div#colour-swatch table thead').width()-5 })
+					$('div#colour-swatch table tbody tr#colour-preview').css({ 'width' : $('div#colour-swatch table thead').width()-4 })
 					_append = true;
 					_flag = true;
 				}
